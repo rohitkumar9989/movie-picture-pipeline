@@ -59,7 +59,7 @@ jobs:
       - uses: aws-actions/amazon-ecr-login@v2
         id: ecr-login
       - run: |
-          docker build --build-arg REACT_APP_MOVIE_API_URL=http://localhost:5000 \
+          docker build --build-arg REACT_APP_MOVIE_API_URL=http://a976de7e735aa41598e6af94ece34b06-1047698459.us-east-1.elb.amazonaws.com \
             -t ${{ steps.ecr-login.outputs.registry }}/frontend:${{ github.sha }} .
           docker push ${{ steps.ecr-login.outputs.registry }}/frontend:${{ github.sha }}
       - id: set-image
