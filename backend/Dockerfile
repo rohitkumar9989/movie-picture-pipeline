@@ -1,4 +1,5 @@
 FROM public.ecr.aws/docker/library/python:3.10-alpine
+ENV CFLAGS="-Wno-error=incompatible-pointer-types -Wno-error=implicit-function-declaration"
 ENV FLASK_RUN_HOST=0.0.0.0
 
 WORKDIR /
